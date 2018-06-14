@@ -1,1 +1,1 @@
-export const TEST_ACTION = 'TEST_ACTION';
+export const FETCH_SURVEYS = 'FETCH_SURVEYS';
