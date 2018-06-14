@@ -1,8 +1,9 @@
-import _ from "lodash";
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { fetchSurveys } from "./../../actions/surveysAction";
+import _ from 'lodash';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { fetchSurveys } from './../../actions/surveysAction';
+import SurveyListItem from './../SurveyListItem';
 
 class SurveysIndex extends Component {
   componentDidMount() {
@@ -11,11 +12,7 @@ class SurveysIndex extends Component {
 
   renderSurveys() {
     return _.map(this.props.surveys, survey => (
-        <li className="list-group-item" key={survey.id}>
-          <Link to={`/surveys/${survey.id}`}>
-            {survey.title}
-          </Link>
-        </li>
+        <SurveyListItem key={survey.id} survey={survey}/>
       )
     );
   }
