@@ -1,11 +1,9 @@
 import axios from 'axios';
 import { FETCH_SURVEYS, FETCH_SURVEY, DELETE_SURVEY } from '../constants/actionTypes';
-
-const ROOT_URL = 'http://localhost:61876/api';
-const SURVEYS_ENDPOINT_URL = `${ROOT_URL}/surveys`;
+import endpoints from '../constants/endpoints';
 
 export function fetchSurveys() {
-  const request = axios.get(SURVEYS_ENDPOINT_URL);
+  const request = axios.get(endpoints.surveys);
 
   return {
     type: FETCH_SURVEYS,
@@ -14,7 +12,7 @@ export function fetchSurveys() {
 }
 
 export function fetchSurvey(id) {
-  const request = axios.get(`${SURVEYS_ENDPOINT_URL}/${id}`);
+  const request = axios.get(`${endpoints.surveys}/${id}`);
 
   return {
     type: FETCH_SURVEY,
@@ -24,7 +22,7 @@ export function fetchSurvey(id) {
 
 export function deleteSurvey(id, callback) {
   const request = axios
-    .delete(`${SURVEYS_ENDPOINT_URL}/${id}`)
+    .delete(`${endpoints.surveys}/${id}`)
     .then(() => callback());
 
   return {

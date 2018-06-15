@@ -1,0 +1,10 @@
+@import './../../styles/colors';
+
+.survey-view {
+    padding: 10px 10px 0 50px;
+
+    .back-to-surveys-list {
+        height: 40px;
+        color: $blue-color;
+    }
+}

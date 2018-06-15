@@ -22,16 +22,16 @@ class SurveysIndex extends Component {
   render() {
     return (
       <div className="survey-index">
-      <div class="row survey-info-title">
-        <div class="col-sm-10">
-          <h1 className="surveys-list-header">Surveys List</h1>
+        <div className="row survey-info-title">
+          <div className="col-sm-10">
+            <h1 className="surveys-list-header">Surveys List</h1>
+          </div>
+          <div className="col-sm-2 add-new-survey">
+            <Link className="btn btn-primary btn-block" to="/surveys/add">
+              Add a new Survey
+            </Link>
+          </div>
         </div>
-        <div class="col-sm-2 add-new-survey">
-          <Link className="btn btn-primary btn-block" to="/surveys/add">
-            Add a new Survey
-          </Link>
-        </div>
-      </div>
         <ul className="list-group">
           {this.renderSurveys()}
         </ul>
