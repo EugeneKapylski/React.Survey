@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { fetchSurveys } from './../../actions/surveysAction';
 import SurveyListItem from './../SurveyListItem';
 
+import './surveys-index.scss';
+
 class SurveysIndex extends Component {
   componentDidMount() {
     this.props.fetchSurveys();
@@ -19,13 +21,17 @@ class SurveysIndex extends Component {
 
   render() {
     return (
-      <div>
-        <div className="text-xs-right">
-          <Link className="btn btn-primary" to="/surveys/add">
+      <div className="survey-index">
+      <div class="row survey-info-title">
+        <div class="col-sm-10">
+          <h1 className="surveys-list-header">Surveys List</h1>
+        </div>
+        <div class="col-sm-2 add-new-survey">
+          <Link className="btn btn-primary btn-block" to="/surveys/add">
             Add a new Survey
           </Link>
         </div>
-        <h3>Surveys</h3>
+      </div>
         <ul className="list-group">
           {this.renderSurveys()}
         </ul>

@@ -1,0 +1,13 @@
+@import './../../styles/colors';
+
+.survey-index {
+    padding-left: 50px;
+
+    .survey-info-title {
+        margin: 20px 0 15px 0;
+    }
+
+    .surveys-list-header {
+        color: $blue-color;
+    }
+}
