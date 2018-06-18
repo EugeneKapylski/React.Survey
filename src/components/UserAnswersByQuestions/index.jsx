@@ -18,7 +18,7 @@ class UserAnswersByQuestions extends Component {
             <li className="list-group-item" key={questionNumber}>
                 <UserAnswersByQuestion
                     questionNumber={questionNumber}
-                    questionTitle={answers[0].question.title}
+                    question={answers[0].question}
                     answers={answers}
                 />
             </li>

@@ -1,10 +1,11 @@
 import React from 'react';
+import Answer from './../Answer';
 
 const UserAnswersByQuestion = (props) => {
     return (
         <div className="user-answers-by-question">
             <h3>Question # {props.questionNumber}</h3>
-            <p>{props.questionTitle}</p>
+            <p>{props.question.title}</p>
             <div>
                 <h3>Answers:</h3>
                 <table className="table table-striped">
@@ -17,12 +18,21 @@ const UserAnswersByQuestion = (props) => {
                     </thead>
                     <tbody>
                         {
-                            props.answers.map(function (answer, answerIndex) {
+                            props.answers.map(function (questionPassing, answerIndex) {
+                                const {firstName, lastName} = questionPassing.user;
+                                const userFullName = `${firstName} ${lastName}`;
+                                const answerSettings = JSON.parse(questionPassing.answer.answerSettings);
+
                                 return (
                                     <tr key={`${props.questionNumber}-${answerIndex}`}>
                                         <th scope="row">{answerIndex}</th>
-                                        <td>{answer.user.lastName}</td>
-                                        <td>{answer.answer.answerSettings}</td>
+                                        <td>{userFullName}</td>
+                                        <td>
+                                            <Answer
+                                                questionType={props.question.questionType}
+                                                answerSettings={answerSettings}
+                                            />
+                                        </td>
                                     </tr>
                                 );
                             })
