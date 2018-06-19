@@ -3,6 +3,7 @@ import questionTypes from './../../constants/questionTypes';
 import TextAnswer from './../AnswerTypes/TextAnswer';
 import SingleChoiceAnswer from './../AnswerTypes/SingleChoiceAnswer';
 import MultiChoiceAnswer from './../AnswerTypes/MultiChoiceAnswer';
+import { number } from 'prop-types';
 
 const Answer = ({questionType, answerSettings}) => {
     switch(questionType) {
@@ -15,6 +16,10 @@ const Answer = ({questionType, answerSettings}) => {
         default:
           return;
     }
+};
+
+Answer.propTypes = {
+    questionType: number.isRequired,
 };
 
 Answer.displayName = 'Answer';

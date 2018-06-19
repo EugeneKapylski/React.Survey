@@ -6,20 +6,20 @@ import SurveysIndex from './SurveysIndex';
 import Footer from './Footer';
 
 export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header/>
-        <BrowserRouter>
-          <div>
-            <Switch>
-              <Route path="/surveys/:id" component={SurveyView}/>
-              <Route path="/" component={SurveysIndex} />
-            </Switch>
-          </div>
-        </BrowserRouter>
-        <Footer/>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Header />
+                <BrowserRouter>
+                    <div>
+                        <Switch>
+                            <Route path="/surveys/:id" component={SurveyView} />
+                            <Route path="/" component={SurveysIndex} />
+                        </Switch>
+                    </div>
+                </BrowserRouter>
+                <Footer />
+            </div>
+        );
+    }
 }

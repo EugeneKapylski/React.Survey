@@ -11,34 +11,34 @@ const mapStateToProps = state => ({ surveys: state.surveys });
 
 @connect(mapStateToProps, { fetchSurveys })
 export default class SurveysIndex extends Component {
-  componentDidMount() {
-    this.props.fetchSurveys();
-  }
+    componentDidMount() {
+        this.props.fetchSurveys();
+    }
 
-  renderSurveys() {
-    return _.map(this.props.surveys, survey => (
-        <SurveyListItem key={survey.id} survey={survey}/>
-      )
-    );
-  }
+    renderSurveys() {
+        return _.map(this.props.surveys, survey => (
+            <SurveyListItem key={survey.id} survey={survey} />
+        )
+        );
+    }
 
-  render() {
-    return (
-      <div className="survey-index">
-        <div className="row survey-info-title">
-          <div className="col-sm-10">
-            <h1 className="surveys-list-header">Surveys List</h1>
-          </div>
-          <div className="col-sm-2 add-new-survey">
-            <Link className="btn btn-primary btn-block" to="/surveys/add">
-              Add a new Survey
+    render() {
+        return (
+            <div className="survey-index">
+                <div className="row survey-info-title">
+                    <div className="col-sm-10">
+                        <h1 className="surveys-list-header">Surveys List</h1>
+                    </div>
+                    <div className="col-sm-2 add-new-survey">
+                        <Link className="btn btn-primary btn-block" to="/surveys/add">
+                            Add a new Survey
             </Link>
-          </div>
-        </div>
-        <ul className="list-group">
-          {this.renderSurveys()}
-        </ul>
-      </div>
-    );
-  }
+                    </div>
+                </div>
+                <ul className="list-group">
+                    {this.renderSurveys()}
+                </ul>
+            </div>
+        );
+    }
 }

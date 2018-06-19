@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './survey-list-item.scss'
 
-const SurveyListItem = ({survey}) => {
+const SurveyListItem = ({ survey }) => {
     return (
         <li className="survey-list-item list-group-item">
             <Link to={`/surveys/${survey.id}`}>

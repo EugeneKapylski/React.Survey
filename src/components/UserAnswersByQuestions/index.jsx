@@ -15,7 +15,7 @@ export default class UserAnswersByQuestions extends Component {
     renderUserAnswersByQuestions() {
         const passingsGroupByQuestions = _.groupBy(this.props.surveyPassings, answers => answers.question.id);
 
-        return  _.map(passingsGroupByQuestions, (questionPassings, questionNumber) => (
+        return _.map(passingsGroupByQuestions, (questionPassings, questionNumber) => (
             <li className="list-group-item" key={questionNumber}>
                 <UserAnswersByQuestion
                     questionNumber={questionNumber}
@@ -24,13 +24,13 @@ export default class UserAnswersByQuestions extends Component {
                 />
             </li>
         ));
-  }
+    }
 
-  render() {
-    return (
-        <ul className="list-group user-answers-by-questions">
-            {this.renderUserAnswersByQuestions()}
-        </ul>
-    );
-  }
+    render() {
+        return (
+            <ul className="list-group user-answers-by-questions">
+                {this.renderUserAnswersByQuestions()}
+            </ul>
+        );
+    }
 }

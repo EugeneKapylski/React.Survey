@@ -1,7 +1,7 @@
 import React from 'react';
 import UserAnswersByQuestions from './../UserAnswersByQuestions';
 
-const SurveyStatistic = ({surveyId}) => {
+const SurveyStatistic = ({ surveyId }) => {
     return (
         <div className="survey-statistic">
             <UserAnswersByQuestions surveyId={surveyId} />

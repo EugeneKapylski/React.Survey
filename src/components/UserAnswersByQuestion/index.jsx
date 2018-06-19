@@ -19,7 +19,7 @@ const UserAnswersByQuestion = (props) => {
                     <tbody>
                         {
                             props.questionPassings.map((questionPassing, answerIndex) => {
-                                const {firstName, lastName} = questionPassing.user;
+                                const { firstName, lastName } = questionPassing.user;
                                 const userFullName = `${firstName} ${lastName}`;
                                 const answerSettings = JSON.parse(questionPassing.answer.answerSettings);
                                 const questionPassingKey = `${props.questionNumber}-${answerIndex}`;
