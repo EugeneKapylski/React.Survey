@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 import './survey-list-item.scss'
 
-const SurveyListItem = (props) => {
+const SurveyListItem = ({survey}) => {
     return (
         <li className="survey-list-item list-group-item">
-            <Link to={`/surveys/${props.survey.id}`}>
-                {props.survey.title}
+            <Link to={`/surveys/${survey.id}`}>
+                {survey.title}
             </Link>
         </li>
     );

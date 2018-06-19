@@ -18,13 +18,14 @@ const UserAnswersByQuestion = (props) => {
                     </thead>
                     <tbody>
                         {
-                            props.answers.map(function (questionPassing, answerIndex) {
+                            props.questionPassings.map((questionPassing, answerIndex) => {
                                 const {firstName, lastName} = questionPassing.user;
                                 const userFullName = `${firstName} ${lastName}`;
                                 const answerSettings = JSON.parse(questionPassing.answer.answerSettings);
+                                const questionPassingKey = `${props.questionNumber}-${answerIndex}`;
 
                                 return (
-                                    <tr key={`${props.questionNumber}-${answerIndex}`}>
+                                    <tr key={questionPassingKey}>
                                         <th scope="row">{answerIndex}</th>
                                         <td>{userFullName}</td>
                                         <td>

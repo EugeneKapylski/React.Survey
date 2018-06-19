@@ -1,7 +1,7 @@
 import React from 'react';
 import ChoiceAnswer from './../ChoiceAnswer';
 
-const SingleChoiceAnswer = (props) => {
+const SingleChoiceAnswer = props => {
   return (
     <ChoiceAnswer
       inputType="radio"

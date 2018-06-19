@@ -1,12 +1,12 @@
 import React from 'react';
 
-const TextAnswer = (props) => {
-    const disabled = props.answerSettings.isReadonly ? {'disabled' : 'disabled'} : {};
+const TextAnswer = ({answerSettings}) => {
+    const disabled = answerSettings.isReadonly ? {'disabled' : 'disabled'} : {};
 
     return (
       <input
         type="text"
-        value={props.answerSettings.answer}
+        value={answerSettings.answer}
         {...disabled}
       />
     );

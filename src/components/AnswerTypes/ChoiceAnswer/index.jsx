@@ -1,16 +1,16 @@
 import React from 'react';
 
-const ChoiceAnswer = (props) => {
-  const disabled = props.answerSettings.isReadonly ? {'disabled' : 'disabled'} : {};
+const ChoiceAnswer = ({answerSettings, className, inputType}) => {
+  const disabled = answerSettings.isReadonly ? {'disabled' : 'disabled'} : {};
 
-  return props.answerSettings.options.map(option => {
+  return answerSettings.options.map(option => {
     return (
-      <div className={props.className} key={option.value}>
+      <div className={className} key={option.value}>
         <label>
           <input
-            type={props.inputType}
+            type={inputType}
             value={option.value}
-            name={props.answerSettings.groupName}
+            name={answerSettings.groupName}
             checked={option.isSelected}
             {...disabled}/>{option.value}
         </label>

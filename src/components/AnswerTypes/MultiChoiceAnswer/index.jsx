@@ -1,7 +1,7 @@
 import React from 'react';
 import ChoiceAnswer from './../ChoiceAnswer';
 
-const MultiChoiceAnswer = (props) => {
+const MultiChoiceAnswer = props => {
   return (
     <ChoiceAnswer
       inputType="checkbox"

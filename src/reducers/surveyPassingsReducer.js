@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { FETCH_SURVEY_PASSINGS } from '../constants/actionTypes';
 
 export default function(state = {}, action) {

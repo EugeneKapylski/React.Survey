@@ -1,10 +1,10 @@
 import React from 'react';
 import UserAnswersByQuestions from './../UserAnswersByQuestions';
 
-const SurveyStatistic = (props) => {
+const SurveyStatistic = ({surveyId}) => {
     return (
         <div className="survey-statistic">
-            <UserAnswersByQuestions surveyId={props.surveyId} />
+            <UserAnswersByQuestions surveyId={surveyId} />
         </div>
     );
 };
