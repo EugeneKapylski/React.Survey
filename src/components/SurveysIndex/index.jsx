@@ -7,7 +7,10 @@ import SurveyListItem from './../SurveyListItem';
 
 import './surveys-index.scss';
 
-class SurveysIndex extends Component {
+const mapStateToProps = state => ({ surveys: state.surveys });
+
+@connect(mapStateToProps, { fetchSurveys })
+export default class SurveysIndex extends Component {
   componentDidMount() {
     this.props.fetchSurveys();
   }
@@ -39,9 +42,3 @@ class SurveysIndex extends Component {
     );
   }
 }
-
-function mapStateToProps(state) {
-  return { surveys: state.surveys };
-}
-
-export default connect(mapStateToProps, { fetchSurveys })(SurveysIndex);

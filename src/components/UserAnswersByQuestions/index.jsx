@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 import { fetchSurveyPassings } from './../../actions/surveyPassingsAction';
 import UserAnswersByQuestion from './../UserAnswersByQuestion';
 
-class UserAnswersByQuestions extends Component {
+const mapStateToProps = (state) => ({ surveyPassings: state.surveyPassings });
+
+@connect(mapStateToProps, { fetchSurveyPassings })
+export default class UserAnswersByQuestions extends Component {
     componentDidMount() {
         this.props.fetchSurveyPassings(this.props.surveyId);
     }
@@ -31,9 +34,3 @@ class UserAnswersByQuestions extends Component {
     );
   }
 }
-
-function mapStateToProps(state) {
-    return { surveyPassings: state.surveyPassings };
-}
-
-export default connect(mapStateToProps, { fetchSurveyPassings })(UserAnswersByQuestions);
