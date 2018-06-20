@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_SURVEYS, FETCH_SURVEY, DELETE_SURVEY } from '../constants/actionTypes';
+import { FETCH_SURVEYS, FETCH_SURVEY, CREATE_SURVEY, DELETE_SURVEY } from '../constants/actionTypes';
 import endpoints from '../constants/endpoints';
 
 export function fetchSurveys() {
@@ -19,6 +19,18 @@ export function fetchSurvey(id) {
     payload: request
   };
 }
+
+export function createSurvey(survey, callback) {
+    debugger;
+    const request = axios
+      .post(`${endpoints.surveys}`, survey)
+      .then(() => callback());
+
+    return {
+      type: CREATE_SURVEY,
+      payload: request
+    };
+  }
 
 export function deleteSurvey(id, callback) {
   const request = axios
