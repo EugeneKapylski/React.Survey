@@ -5,7 +5,6 @@ import { createSurvey } from '../../actions/surveysAction';
 import SurveyAddForm from '../../components/SurveyAddForm';
 
 const SurveyAddFormContainer = ({ handleSubmit, createSurvey }) => {
-    debugger;
     const onSubmit = (survey) => {
         createSurvey(survey, () => {
             props.history.push("/");

@@ -21,7 +21,6 @@ export function fetchSurvey(id) {
 }
 
 export function createSurvey(survey, callback) {
-    debugger;
     const request = axios
       .post(`${endpoints.surveys}`, survey)
       .then(() => callback());
