@@ -1,25 +1,13 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchSurveys } from './../../actions/surveysAction';
 import SurveyListItem from './../SurveyListItem';
 
 import './surveys-index.scss';
 
-const mapStateToProps = state => ({ surveys: state.surveys });
-
-@connect(mapStateToProps, { fetchSurveys })
 export default class SurveysIndex extends Component {
-    componentDidMount() {
-        this.props.fetchSurveys();
-    }
-
     renderSurveys() {
-        return _.map(this.props.surveys, survey => (
-            <SurveyListItem key={survey.id} survey={survey} />
-        )
-        );
+        return _.map(this.props.surveys, survey => (<SurveyListItem key={survey.id} survey={survey} />));
     }
 
     render() {
@@ -32,7 +20,7 @@ export default class SurveysIndex extends Component {
                     <div className="col-sm-2 add-new-survey">
                         <Link className="btn btn-primary btn-block" to="/surveys/add">
                             Add a new Survey
-            </Link>
+                        </Link>
                     </div>
                 </div>
                 <ul className="list-group">

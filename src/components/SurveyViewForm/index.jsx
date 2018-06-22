@@ -1,31 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchSurvey, deleteSurvey } from '../../actions/surveysAction';
 import SurveyStatistic from './../SurveyStatistic';
 import surveyType from "./../../constants/prop-types/surveyType";
 
 import './survey-view.scss';
 
-const mapStateToProps = ({ surveys }, ownProps) => ({ survey: surveys[ownProps.match.params.id] });
-
-@connect(mapStateToProps, { fetchSurvey, deleteSurvey })
-export default class SurveyView extends Component {
+export default class SurveyViewForm extends Component {
     static propTypes = {
         survey: surveyType.isRequired
-    }
-
-    componentDidMount() {
-        const { id } = this.props.match.params;
-        this.props.fetchSurvey(id);
-    }
-
-    onDeleteClick() {
-        const { id } = this.props.match.params;
-
-        this.props.deleteSurvey(id, () => {
-            this.props.history.push("/");
-        });
     }
 
     render() {
@@ -47,7 +29,7 @@ export default class SurveyView extends Component {
                     <div className="col-sm-2 add-new-survey">
                         <button
                             className="btn btn-danger pull-xs-right"
-                            onClick={this.onDeleteClick.bind(this)}
+                            onClick={this.props.onDeleteClick.bind(this)}
                         >
                             Delete Survey
                         </button>
