@@ -3,6 +3,7 @@ import { Field } from 'redux-form';
 import questionTypeCollection from '../../constants/questionTypeCollection';
 import questionTypes from '../../constants/questionTypes';
 import CreateAnswerOptionForChoiceField from '../CreateAnswerOptionForChoiceField'
+import { required } from '../../constants/validationRules';
 
 export default class QuestionEditForm extends Component {
     state = {
@@ -56,6 +57,7 @@ export default class QuestionEditForm extends Component {
                     type="text"
                     component={this.renderField.bind(this)}
                     label="Question:"
+                    validate={[required]}
                 />
 
                 <div>
