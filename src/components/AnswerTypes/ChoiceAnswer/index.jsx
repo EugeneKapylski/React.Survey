@@ -2,11 +2,15 @@ import React from 'react';
 import { string } from 'prop-types';
 import choiceAnswerSettingsType from '../../../constants/prop-types/choiceAnswerSettingsType';
 
-const ChoiceAnswer = ({ answerSettings, className, inputType }) => {
+const ChoiceAnswer = ({
+    answerSettings,
+    className = 'checkbox',
+    inputType = 'checkbox'
+}) => {
+
     const disabled = answerSettings.isReadonly ? { 'disabled': 'disabled' } : {};
 
-    return answerSettings.options.map(option => {
-        return (
+    return answerSettings.options.map(option => (
             <div className={className} key={option.value}>
                 <label>
                     <input
@@ -17,14 +21,9 @@ const ChoiceAnswer = ({ answerSettings, className, inputType }) => {
                         {...disabled} />{option.value}
                 </label>
             </div>
-        );
-    });
+        )
+    );
 }
-
-ChoiceAnswer.defaultProps = {
-    className: 'checkbox',
-    inputType: 'checkbox'
-};
 
 ChoiceAnswer.propTypes = {
     answerSettings: choiceAnswerSettingsType.isRequired,

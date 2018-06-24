@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field } from "redux-form";
+import { Field } from 'redux-form';
 
 const renderQuestionTypeDropdownList = ({ input, data, valueField, textField }) => {
     const handleChange = event => {
@@ -19,17 +19,15 @@ const renderQuestionTypeDropdownList = ({ input, data, valueField, textField }) 
     );
 }
 
-const QuestionTypeDropDownList = () => {
-    return (
-        <Field
-            name="questionType"
-            component={renderQuestionTypeDropdownList}
-            data={questionTypeCollection}
-            valueField="id"
-            textField="name"
-        />
-    );
-};
+const QuestionTypeDropDownList = () => (
+    <Field
+        name="questionType"
+        component={renderQuestionTypeDropdownList}
+        data={questionTypeCollection}
+        valueField="id"
+        textField="name"
+    />
+);
 
 QuestionTypeDropDownList.displayName = 'QuestionTypeDropDownList';
 

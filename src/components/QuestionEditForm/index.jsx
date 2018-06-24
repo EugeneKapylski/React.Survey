@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { Field } from "redux-form";
+import { Field } from 'redux-form';
 import questionTypeCollection from '../../constants/questionTypeCollection';
 import questionTypes from '../../constants/questionTypes';
 import CreateAnswerOptionForChoiceField from '../CreateAnswerOptionForChoiceField'
 
 export default class QuestionEditForm extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            selectedQuestionTypeId: questionTypeCollection[0].id
-        }
+    state = {
+        selectedQuestionTypeId: questionTypeCollection[0].id
     }
-
     //TODO: use renderField as common code
     renderField({ input, label, type, meta: { touched, error } }) {
         return (

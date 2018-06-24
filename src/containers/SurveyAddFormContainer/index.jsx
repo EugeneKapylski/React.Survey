@@ -1,5 +1,5 @@
 import React from 'react';
-import { reduxForm } from "redux-form";
+import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { createSurvey } from '../../actions/surveysAction';
 import SurveyAddForm from '../../components/SurveyAddForm';
