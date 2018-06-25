@@ -1,6 +1,6 @@
 import React from 'react';
-import ChoiceAnswer from './../ChoiceAnswer';
-import choiceAnswerSettingsType from './../../../constants/prop-types/choiceAnswerSettingsType';
+import ChoiceAnswer from '../ChoiceAnswer';
+import choiceAnswerSettingsType from '../../../constants/prop-types/choiceAnswerSettingsType';
 
 const MultiChoiceAnswer = props => (
     <ChoiceAnswer

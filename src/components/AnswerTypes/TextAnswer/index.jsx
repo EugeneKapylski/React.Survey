@@ -1,5 +1,5 @@
 import React from 'react';
-import textAnswerSettingsType from './../../../constants/prop-types/textAnswerSettingsType';
+import textAnswerSettingsType from '../../../constants/prop-types/textAnswerSettingsType';
 
 const TextAnswer = ({ answerSettings }) => {
     const disabled = answerSettings.isReadonly ? { 'disabled': 'disabled' } : {};

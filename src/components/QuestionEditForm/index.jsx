@@ -22,7 +22,7 @@ export default class QuestionEditForm extends Component {
         );
     }
 
-    renderQuestionTypeDropdownList({ input, data, valueField, textField }) {
+    renderQuestionTypeDropdownList = ({ input, data, valueField, textField }) => {
         const handleChange = event => {
             this.setState({ selectedQuestionTypeId: parseInt(event.target.value, 10) });
         }
@@ -32,7 +32,7 @@ export default class QuestionEditForm extends Component {
         return (
             <select
                 value={this.state.selectedQuestionTypeId}
-                onChange={handleChange.bind(this)}
+                onChange={handleChange}
             >
                 {data.map(buildOption)}
             </select>
@@ -55,7 +55,7 @@ export default class QuestionEditForm extends Component {
                 <Field
                     name={`${this.props.question}.title`}
                     type="text"
-                    component={this.renderField.bind(this)}
+                    component={this.renderField}
                     label="Question:"
                     validate={[required]}
                 />
@@ -64,7 +64,7 @@ export default class QuestionEditForm extends Component {
                     <label>Question Type</label>
                     <Field
                         name="questionType"
-                        component={this.renderQuestionTypeDropdownList.bind(this)}
+                        component={this.renderQuestionTypeDropdownList}
                         data={questionTypeCollection}
                         valueField="id"
                         textField="name"

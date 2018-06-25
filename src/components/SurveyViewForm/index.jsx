@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SurveyStatistic from './../SurveyStatistic';
-import surveyType from './../../constants/prop-types/surveyType';
+import SurveyStatistic from '../SurveyStatistic';
+import surveyType from '../../constants/prop-types/surveyType';
 
 import './survey-view.scss';
 
@@ -22,7 +22,7 @@ const SurveyViewForm = ({ survey, onDeleteClick }) => {
                 <div className="col-sm-2 add-new-survey">
                     <button
                         className="btn btn-danger pull-xs-right"
-                        onClick={onDeleteClick.bind(this)}
+                        onClick={onDeleteClick}
                     >
                         Delete Survey
                     </button>

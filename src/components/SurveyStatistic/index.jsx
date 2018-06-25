@@ -1,5 +1,5 @@
 import React from 'react';
-import UserAnswersByQuestionsContainer from './../../containers/UserAnswersByQuestionsContainer';
+import UserAnswersByQuestionsContainer from '../../containers/UserAnswersByQuestionsContainer';
 
 const SurveyStatistic = ({ surveyId }) => (
     <div className="survey-statistic">

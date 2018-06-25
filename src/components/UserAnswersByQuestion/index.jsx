@@ -1,5 +1,5 @@
 import React from 'react';
-import Answer from './../Answer';
+import Answer from '../Answer';
 import { shape, arrayOf, number } from 'prop-types';
 import questionType from '../../constants/prop-types/questionType';
 import questionPassingType from '../../constants/prop-types/questionPassingType';

@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSurveyPassings } from './../../actions/surveyPassingsAction';
-import UserAnswersByQuestion from './../UserAnswersByQuestion';
+import { fetchSurveyPassings } from '../../actions/surveyPassingsAction';
+import UserAnswersByQuestion from '../UserAnswersByQuestion';
 
 const mapStateToProps = (state) => ({ surveyPassings: state.surveyPassings });
 

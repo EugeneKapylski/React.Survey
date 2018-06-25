@@ -3,5 +3,5 @@ import answerOption from './answerOptionType';
 
 export default shape({
     isReadonly: bool,
-    options: arrayOf(shape(answerOption))
+    options: arrayOf(answerOption)
 });

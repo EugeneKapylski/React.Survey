@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SurveyListItem from './../SurveyListItem';
+import SurveyListItem from '../SurveyListItem';
 
 import './surveys-index.scss';
 

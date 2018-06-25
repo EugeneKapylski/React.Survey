@@ -12,7 +12,7 @@ export default class SurveyViewFormContainer extends Component {
         this.props.fetchSurvey(id);
     }
 
-    onDeleteClick() {
+    onDeleteClick = () => {
         const { id } = this.props.match.params;
 
         this.props.deleteSurvey(id, () => {
@@ -26,8 +26,7 @@ export default class SurveyViewFormContainer extends Component {
         return (
             <SurveyViewForm
                 survey={survey}
-                onDeleteClick={this.onDeleteClick.bind(this)}
-
+                onDeleteClick={this.onDeleteClick}
             />
         );
     }

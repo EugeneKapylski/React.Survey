@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSurveys } from './../../actions/surveysAction';
+import { fetchSurveys } from '../../actions/surveysAction';
 import SurveysIndex from '../../components/SurveysIndex';
 
 const mapStateToProps = state => ({ surveys: state.surveys });

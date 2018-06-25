@@ -20,6 +20,5 @@ const SurveyAddFormContainer = ({ handleSubmit, createSurvey }) => {
 }
 
 export default reduxForm({
-    //validate, //TODO: need to implement validation
     form: "SurveyAddForm"
 })(connect(null, { createSurvey })(SurveyAddFormContainer));

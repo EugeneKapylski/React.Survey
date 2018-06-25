@@ -1,8 +1,8 @@
 import React from 'react';
-import questionTypes from './../../constants/questionTypes';
-import TextAnswer from './../AnswerTypes/TextAnswer';
-import SingleChoiceAnswer from './../AnswerTypes/SingleChoiceAnswer';
-import MultiChoiceAnswer from './../AnswerTypes/MultiChoiceAnswer';
+import questionTypes from '../../constants/questionTypes';
+import TextAnswer from '../AnswerTypes/TextAnswer';
+import SingleChoiceAnswer from '../AnswerTypes/SingleChoiceAnswer';
+import MultiChoiceAnswer from '../AnswerTypes/MultiChoiceAnswer';
 import { number } from 'prop-types';
 
 const Answer = ({questionType, answerSettings}) => {
