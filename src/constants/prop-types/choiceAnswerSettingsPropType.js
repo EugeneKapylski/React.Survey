@@ -1,7 +1,7 @@
 import { arrayOf, shape, bool } from 'prop-types';
-import answerOption from './answerOptionType';
+import answerOptionPropType from './answerOptionPropType';
 
 export default shape({
     isReadonly: bool,
-    options: arrayOf(answerOption)
+    options: arrayOf(answerOptionPropType)
 });

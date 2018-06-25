@@ -1,5 +1,5 @@
 import React from 'react';
-import textAnswerSettingsType from '../../../constants/prop-types/textAnswerSettingsType';
+import textAnswerSettingsPropType from 'Constants/prop-types/textAnswerSettingsPropType';
 
 const TextAnswer = ({ answerSettings }) => {
     const disabled = answerSettings.isReadonly ? { 'disabled': 'disabled' } : {};
@@ -14,7 +14,7 @@ const TextAnswer = ({ answerSettings }) => {
 }
 
 TextAnswer.propTypes = {
-    answerSettings: textAnswerSettingsType.isRequired
+    answerSettings: textAnswerSettingsPropType.isRequired
 }
 
 TextAnswer.displayName = 'TextAnswer';

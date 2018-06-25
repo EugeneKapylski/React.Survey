@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SurveyStatistic from '../SurveyStatistic';
-import surveyType from '../../constants/prop-types/surveyType';
+import surveyPropType from 'Constants/prop-types/surveyPropType';
 
 import './survey-view.scss';
 
@@ -34,7 +34,7 @@ const SurveyViewForm = ({ survey, onDeleteClick }) => {
 }
 
 SurveyViewForm.propTypes = {
-    survey: surveyType.isRequired
+    survey: surveyPropType.isRequired
 };
 
 export default SurveyViewForm;

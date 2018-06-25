@@ -5,7 +5,13 @@ import SurveyListItem from '../SurveyListItem';
 
 import './surveys-index.scss';
 
-const renderSurveys = (surveys) => _.map(surveys, survey => (<SurveyListItem key={survey.id} survey={survey} />));
+const renderSurveys = (surveys) => _.map(surveys, survey => (
+        <SurveyListItem
+            key={survey.id}
+            survey={survey}
+        />
+    )
+);
 
 const SurveysIndex = ({ surveys }) => (
     <div className="survey-index">
@@ -16,7 +22,7 @@ const SurveysIndex = ({ surveys }) => (
             <div className="col-sm-2 add-new-survey">
                 <Link className="btn btn-primary btn-block" to="/surveys/add">
                     Add a new Survey
-                        </Link>
+                </Link>
             </div>
         </div>
         <ul className="list-group">

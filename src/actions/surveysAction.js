@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { FETCH_SURVEYS, FETCH_SURVEY, CREATE_SURVEY, DELETE_SURVEY } from '../constants/actionTypes';
-import endpoints from '../constants/endpoints';
+import { FETCH_SURVEYS, FETCH_SURVEY, CREATE_SURVEY, DELETE_SURVEY } from 'Constants/actionTypes';
+import endpoints from 'Constants/endpoints';
 
 export function fetchSurveys() {
   const request = axios.get(endpoints.surveys);

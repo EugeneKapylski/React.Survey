@@ -1,6 +1,6 @@
 import React from 'react';
 import ChoiceAnswer from '../ChoiceAnswer';
-import choiceAnswerSettingsType from '../../../constants/prop-types/choiceAnswerSettingsType';
+import choiceAnswerSettingsPropType from 'Constants/prop-types/choiceAnswerSettingsPropType';
 
 const SingleChoiceAnswer = props => (
     <ChoiceAnswer
@@ -11,7 +11,7 @@ const SingleChoiceAnswer = props => (
 );
 
 SingleChoiceAnswer.propTypes = {
-    answerSettings: choiceAnswerSettingsType.isRequired
+    answerSettings: choiceAnswerSettingsPropType.isRequired
 }
 
 SingleChoiceAnswer.displayName = 'SingleChoiceAnswer';

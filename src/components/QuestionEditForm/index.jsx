@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
-import questionTypeCollection from '../../constants/questionTypeCollection';
-import questionTypes from '../../constants/questionTypes';
-import CreateAnswerOptionForChoiceField from '../CreateAnswerOptionForChoiceField'
-import { required } from '../../constants/validationRules';
+import questionTypeCollection from 'Constants/questionTypeCollection';
+import questionTypes from 'Constants/questionTypes';
+import CreateAnswerOptionForChoiceField from '../CreateAnswerOptionForChoiceField';
+import InputFormField from '../FormFields/InputFormField';
+import { required } from 'Constants/validationRules';
+import { string, number } from 'prop-types';
 
 export default class QuestionEditForm extends Component {
+    static propTypes = {
+        questionNumber: number.isRequired,
+        question: string
+    }
+
     state = {
         selectedQuestionTypeId: questionTypeCollection[0].id
-    }
-    //TODO: use renderField as common code
-    renderField({ input, label, type, meta: { touched, error } }) {
-        return (
-            <div>
-                <label>{label}</label>
-                <div>
-                    <input {...input} type={type} placeholder={label} />
-                    {touched && error && <span>{error}</span>}
-                </div>
-            </div>
-        );
     }
 
     renderQuestionTypeDropdownList = ({ input, data, valueField, textField }) => {
@@ -40,6 +35,15 @@ export default class QuestionEditForm extends Component {
     }
 
     render() {
+        const {
+            questionNumber,
+            question,
+            onDelete
+        } = this.props;
+
+        const isChoiceField = this.state.selectedQuestionTypeId === questionTypes.singleChoice
+            || this.state.selectedQuestionTypeId === questionTypes.multiChoice;
+
         return (
             <div>
                 <button
@@ -47,15 +51,14 @@ export default class QuestionEditForm extends Component {
                     type="button"
                     title="Remove Question"
                     aria-label="Close"
-                    onClick={() => fields.remove(index)}
+                    onClick={onDelete}
                 >
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4>Question #{index + 1}</h4>
-                <Field
-                    name={`${this.props.question}.title`}
+                <h4>Question #{questionNumber}</h4>
+                <InputFormField
+                    name={`${question}.title`}
                     type="text"
-                    component={this.renderField}
                     label="Question:"
                     validate={[required]}
                 />
@@ -73,8 +76,8 @@ export default class QuestionEditForm extends Component {
 
                 Selected Question Type: {this.state.selectedQuestionTypeId}
 
-                {(this.state.selectedQuestionTypeId === questionTypes.singleChoice || this.state.selectedQuestionTypeId === questionTypes.multiChoice) &&
-                    <CreateAnswerOptionForChoiceField question={this.props.question} />
+                {isChoiceField &&
+                    <CreateAnswerOptionForChoiceField question={question} />
                 }
             </div>
         );

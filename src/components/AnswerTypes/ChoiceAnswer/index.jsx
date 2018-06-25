@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import choiceAnswerSettingsType from '../../../constants/prop-types/choiceAnswerSettingsType';
+import choiceAnswerSettingsPropType from 'Constants/prop-types/choiceAnswerSettingsPropType';
 
 const ChoiceAnswer = ({
     answerSettings,
@@ -18,7 +18,8 @@ const ChoiceAnswer = ({
                         value={option.value}
                         name={answerSettings.groupName}
                         checked={option.isSelected}
-                        {...disabled} />{option.value}
+                        {...disabled}
+                    />{option.value}
                 </label>
             </div>
         )
@@ -26,7 +27,7 @@ const ChoiceAnswer = ({
 }
 
 ChoiceAnswer.propTypes = {
-    answerSettings: choiceAnswerSettingsType.isRequired,
+    answerSettings: choiceAnswerSettingsPropType.isRequired,
     className: string,
     inputType: string
 }

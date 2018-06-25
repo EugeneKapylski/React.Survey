@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { FETCH_SURVEY_PASSINGS } from '../constants/actionTypes';
-import endpoints from '../constants/endpoints';
+import { FETCH_SURVEY_PASSINGS } from 'Constants/actionTypes';
+import endpoints from 'Constants/endpoints';
 
 export function fetchSurveyPassings(id) {
   const request = axios.get(`${endpoints.surveyPassings}/${id}`);

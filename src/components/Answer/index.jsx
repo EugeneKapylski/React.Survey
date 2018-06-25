@@ -1,5 +1,5 @@
 import React from 'react';
-import questionTypes from '../../constants/questionTypes';
+import questionTypes from 'Constants/questionTypes';
 import TextAnswer from '../AnswerTypes/TextAnswer';
 import SingleChoiceAnswer from '../AnswerTypes/SingleChoiceAnswer';
 import MultiChoiceAnswer from '../AnswerTypes/MultiChoiceAnswer';

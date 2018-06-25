@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { FETCH_SURVEYS, FETCH_SURVEY, DELETE_SURVEY } from '../constants/actionTypes';
+import { FETCH_SURVEYS, FETCH_SURVEY, DELETE_SURVEY } from 'Constants/actionTypes';
 
 export default function (state = {}, action) {
     switch (action.type) {

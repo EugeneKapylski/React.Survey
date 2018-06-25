@@ -1,16 +1,6 @@
 import React from 'react';
-import { Field, FieldArray } from 'redux-form';
-
-//TODO: use renderField as common code
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-    <div>
-        <label>{label}</label>
-        <div>
-            <input {...input} type={type} placeholder={label} />
-            {touched && error && <span>{error}</span>}
-        </div>
-    </div>
-);
+import { FieldArray } from 'redux-form';
+import InputFormField from '../FormFields/InputFormField';
 
 const renderAnswers = ({ fields, meta: { error } }) => (
     <ul>
@@ -29,10 +19,9 @@ const renderAnswers = ({ fields, meta: { error } }) => (
                     title="Remove Answer"
                     onClick={() => fields.remove(index)}
                 />
-                <Field
+                <InputFormField
                     name={`${answer}.text`}
                     type="text"
-                    component={renderField}
                     label={`Answer #${index + 1}`}
                 />
             </li>

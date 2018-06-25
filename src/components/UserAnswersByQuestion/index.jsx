@@ -1,8 +1,8 @@
 import React from 'react';
 import Answer from '../Answer';
 import { shape, arrayOf, number } from 'prop-types';
-import questionType from '../../constants/prop-types/questionType';
-import questionPassingType from '../../constants/prop-types/questionPassingType';
+import questionPropType from 'Constants/prop-types/questionPropType';
+import questionPassingPropType from 'Constants/prop-types/questionPassingPropType';
 
 const UserAnswersByQuestion = (props) => (
     <div className="user-answers-by-question">
@@ -48,8 +48,8 @@ const UserAnswersByQuestion = (props) => (
 
 UserAnswersByQuestion.protoTypes = {
     questionNumber: number.isRequired,
-    question: shape(questionType).isRequired,
-    questionPassings: arrayOf(shape(questionPassingType))
+    question: shape(questionPropType).isRequired,
+    questionPassings: arrayOf(shape(questionPassingPropType))
 };
 
 UserAnswersByQuestion.displayName = 'UserAnswersByQuestion';
