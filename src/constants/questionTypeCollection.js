@@ -2,15 +2,15 @@ import questionTypes from './questionTypes';
 
 export default [
     {
-        id: questionTypes.text,
-        name: "Text"
+        key: questionTypes.text,
+        value: "Text"
     },
     {
-        id: questionTypes.singleChoice,
-        name: "Single Choice"
+        key: questionTypes.singleChoice,
+        value: "Single Choice"
     },
     {
-        id: questionTypes.multiChoice,
-        name: "Multiple Choice"
+        key: questionTypes.multiChoice,
+        value: "Multiple Choice"
     }
 ];

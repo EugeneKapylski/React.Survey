@@ -1,43 +1,29 @@
-//TODO: need to implement:
 import React from 'react';
 import { Field } from 'redux-form';
-import { string, array } from 'prop-types'
+import { string } from 'prop-types'
 
-const renderDropdownListOptions = ({ input, data, valueField, textField, onChange }) => {
-    // const handleChange = event => {
-    //     this.setState({ selectedQuestionTypeId: parseInt(event.target.value, 10) });
-    // }
-
-    const buildOption = item => <option key={item.key} value={item.value}>{item.value}</option>;
+const DropDownListFormField = ({ name, data, onChange }) => {
+    const onValueChanged = (field) => {
+        onChange(field.currentTarget.value);
+    };
 
     return (
-        <select
-            value={this.state.selectedQuestionTypeId}
-            onChange={onChange}
-        >
-            {data.map(buildOption)}
-        </select>
-    );
+        <Field
+            name={name}
+            component="select"
+            onChange={onValueChanged}>
+            {
+                data.map(item => (<option key={item.key} value={item.key}>{item.value}</option>))
+            }
+        </Field>
+    )
+};
+
+DropDownListFormField.propTypes = {
+    name: string.isRequired
+    //TODO: need to add
 }
 
-const DropdownListFormField = ({ name, data, valueField, textField, onChange }) => (
-    <Field
-        name={name}
-        component={data}
-        data={questionTypeCollection}
-        valueField={valueField}
-        textField={textField}
-        onChange={onChange}
-    />
-);
+DropDownListFormField.displayName = 'DropDownListFormField';
 
-DropdownListFormField.propTypes = {
-    name: string.isRequired,
-    type: string,
-    label: string.isRequired,
-    validate: array
-}
-
-DropdownListFormField.displayName = 'DropdownListFormField';
-
-export default DropdownListFormField;
+export default DropDownListFormField;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Field } from 'redux-form';
 import questionTypeCollection from 'Constants/questionTypeCollection';
 import questionTypes from 'Constants/questionTypes';
 import CreateAnswerOptionForChoiceField from '../CreateAnswerOptionForChoiceField';
 import InputFormField from '../FormFields/InputFormField';
+import DropDownListFormField from '../FormFields/DropDownListFormField';
 import { required } from 'Constants/validationRules';
 import { string, number } from 'prop-types';
 
@@ -17,22 +17,9 @@ export default class QuestionEditForm extends Component {
         selectedQuestionTypeId: questionTypeCollection[0].id
     }
 
-    renderQuestionTypeDropdownList = ({ input, data, valueField, textField }) => {
-        const handleChange = event => {
-            this.setState({ selectedQuestionTypeId: parseInt(event.target.value, 10) });
-        }
-
-        const buildOption = item => <option key={item.id} value={item.id}>{item.name}</option>;
-
-        return (
-            <select
-                value={this.state.selectedQuestionTypeId}
-                onChange={handleChange}
-            >
-                {data.map(buildOption)}
-            </select>
-        );
-    }
+    onQuestionTypeChanged = (selectedValue) => {
+        this.setState({ selectedQuestionTypeId: parseInt(selectedValue, 10) });
+    };
 
     render() {
         const {
@@ -65,16 +52,13 @@ export default class QuestionEditForm extends Component {
 
                 <div>
                     <label>Question Type</label>
-                    <Field
-                        name="questionType"
-                        component={this.renderQuestionTypeDropdownList}
-                        data={questionTypeCollection}
-                        valueField="id"
-                        textField="name"
-                    />
-                </div>
 
-                Selected Question Type: {this.state.selectedQuestionTypeId}
+                    <DropDownListFormField
+                        name="questionType"
+                        data={questionTypeCollection}
+                        onChange={this.onQuestionTypeChanged}
+                        selectedValue={this.state.selectedQuestionTypeId}/>
+                </div>
 
                 {isChoiceField &&
                     <CreateAnswerOptionForChoiceField question={question} />
