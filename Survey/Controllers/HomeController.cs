@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Survey.Controllers
+namespace Survey.Web.Controllers
 {
     public class HomeController : Controller
     {

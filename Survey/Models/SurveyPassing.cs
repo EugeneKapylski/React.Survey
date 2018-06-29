@@ -1,4 +1,4 @@
-﻿namespace Survey.Models
+﻿namespace Survey.Web.Models
 {
     public class SurveyPassing
     {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Survey.Models;
+using Survey.Web.Models;
 
-namespace Survey.Controllers
+namespace Survey.Web.Controllers
 {
     [Produces("application/json")]
     [Route("api/Surveys")]
