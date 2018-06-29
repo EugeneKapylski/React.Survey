@@ -1,8 +1,19 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const bundleFolder = 'wwwroot/dist/';
+const srcFolder = './ClientApp/';
 
 module.exports = {
+    entry: {
+        main: srcFolder + 'index.jsx'
+    },
+    devtool: "source-map",
+    output: {
+        filename: "bundle.js",
+        path: path.resolve(__dirname, bundleFolder),
+        publicPath: '/dist/'
+    },
     module: {
         rules: [
             {
@@ -23,7 +34,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: './src/index.html',
+            template: srcFolder + 'index.html',
             filename: './index.html'
         }),
         new ExtractTextPlugin('style.css')
@@ -31,7 +42,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
-            Constants: path.resolve(__dirname, 'src/constants/')
+            Constants: path.resolve(__dirname, srcFolder + 'constants/')
         }
     }
 };

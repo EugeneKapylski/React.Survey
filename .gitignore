@@ -6,3 +6,6 @@ npm-debug.log
 # IntelliJ
 *.iml
 /.idea
+
+#VS 2015 cache/options directory
+.vs/
