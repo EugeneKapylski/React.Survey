@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Survey.Web.Models;
 
 namespace Survey.Web.Controllers
 {
@@ -34,9 +33,7 @@ namespace Survey.Web.Controllers
             return new Models.Survey
             {
                 Id = 2,
-                Title = "The second new",
-                QuestionType = QuestionType.SingleChoice,
-
+                Title = "The second new"
             };
         }
 

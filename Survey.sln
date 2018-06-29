@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Survey.Web", "Survey\Survey.Web.csproj", "{BDB2FFF8-DB8A-4163-8F52-DACFA45C11D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.DataAccess", "Survey.DataAccess\Survey.DataAccess.csproj", "{12903A37-13D6-4029-A395-2BC0FE76A6DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.Business", "Survey.Business\Survey.Business.csproj", "{2C2F1207-09FE-414C-8490-E76EC264C864}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BDB2FFF8-DB8A-4163-8F52-DACFA45C11D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDB2FFF8-DB8A-4163-8F52-DACFA45C11D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDB2FFF8-DB8A-4163-8F52-DACFA45C11D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12903A37-13D6-4029-A395-2BC0FE76A6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12903A37-13D6-4029-A395-2BC0FE76A6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12903A37-13D6-4029-A395-2BC0FE76A6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12903A37-13D6-4029-A395-2BC0FE76A6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2F1207-09FE-414C-8490-E76EC264C864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2F1207-09FE-414C-8490-E76EC264C864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2F1207-09FE-414C-8490-E76EC264C864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2F1207-09FE-414C-8490-E76EC264C864}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

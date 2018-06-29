@@ -1,4 +1,4 @@
-﻿namespace Survey.Web.Models
+﻿namespace Survey.DataAccess.Models
 {
     public class Survey
     {

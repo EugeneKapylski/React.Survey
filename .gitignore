@@ -9,3 +9,7 @@ npm-debug.log
 
 #VS 2015 cache/options directory
 .vs/
+
+
+[Bb]in/
+[Oo]bj/
