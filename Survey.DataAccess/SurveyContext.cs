@@ -2,6 +2,7 @@
 
 namespace Survey.DataAccess
 {
+    invalid code to checked pre-push hook
     public class SurveyContext : DbContext
     {
         public SurveyContext(DbContextOptions<SurveyContext> options) : base(options)
