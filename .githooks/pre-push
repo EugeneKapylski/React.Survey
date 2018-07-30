@@ -26,9 +26,12 @@ NC='\033[0m' # No Color
 	#just list directories separated by space
 	set unitTestProjectDirectories = Survey.Business.XUnit.Test
 	
-	(for %%unitTestProjectDirectory in (%unitTestProjectDirectories%) do (
+	for %%unitTestProjectDirectory in (%unitTestProjectDirectories%) 
+	do 
 		## navigate to the test project to run the tests
 		## TODO: change this to your test project directory
+		echo %%unitTestProjectDirectory
+		
 		cd %%unitTestProjectDirectory
 		
 		echo -e "${YELLOW}Running unit tests...${NC}"
@@ -45,7 +48,7 @@ NC='\033[0m' # No Color
 			echo ""
 			exit $rc
 		fi
-	))
+	done
 
 
 	#for unitTestProjectDirectory in unitTestProjectDirectories
