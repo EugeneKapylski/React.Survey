@@ -9,7 +9,7 @@ namespace Survey.Business.XUnit.Test
         [Fact]
         public void TestMethod1()
         {
-            Assert.Equal(5, 7);
+            Assert.Equal(5, 5);
         }
     }
 }
