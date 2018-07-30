@@ -24,7 +24,7 @@ NC='\033[0m' # No Color
     fi
 
 	
-	unitTestProjectDirectories = (Survey.Business.XUnit.Test)
+	unitTestProjectDirectories = Survey.Business.XUnit.Test #just list directories separated by space
 	for unitTestProjectDirectory in unitTestProjectDirectories
 	do
 		echo "Welcome $i times"
