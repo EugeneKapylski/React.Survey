@@ -24,9 +24,39 @@ NC='\033[0m' # No Color
     fi
 
 	#just list directories separated by space
-	set unitTestProjectDirectories = Survey.Business.XUnit.Test
+	declare -a unitTestProjectDirectories=("Survey.Business.XUnit.Test")
 	
-	for %%unitTestProjectDirectory in (%unitTestProjectDirectories%) 
+	for unitTestProjectDirectory in "${unitTestProjectDirectories[@]}"
+	do
+		echo "$i"
+		## navigate to the test project to run the tests
+		## TODO: change this to your test project directory
+		echo %%unitTestProjectDirectory
+		
+		cd %%unitTestProjectDirectory
+		
+		echo -e "${YELLOW}Running unit tests...${NC}"
+		echo ""
+		
+		# run the unit tests
+		dotnet test
+		
+		# $? is a shell variable which stores the return code from what we just ran
+		rc=$?
+		if [[ $rc != 0 ]] ; then
+			# A non-zero return code means an error occurred, so tell the user and exit
+			echo -e "${RED}Unit tests failed, please fix and push again${NC}"
+			echo ""
+			exit $rc
+		fi
+		
+	   # or do whatever with individual element of the array
+	done
+
+
+	#set unitTestProjectDirectories = Survey.Business.XUnit.Test
+	
+	for %%unitTestProjectDirectory in %unitTestProjectDirectories%
 	do 
 		## navigate to the test project to run the tests
 		## TODO: change this to your test project directory
