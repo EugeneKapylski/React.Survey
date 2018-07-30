@@ -2,6 +2,7 @@
 
 namespace Survey.DataAccess
 {
+    invalid code to chech pre-pucs action
     public class SurveyContext : DbContext
     {
         public SurveyContext(DbContextOptions<SurveyContext> options) : base(options)
