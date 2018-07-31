@@ -24,7 +24,7 @@ NC='\033[0m' # No Color
     fi
 
 	#just list directories separated by space
-	declare -a unitTestProjectDirectories=("Survey.Business.XUnit.Test")
+	declare -a unitTestProjectDirectories=("Survey.Business.XUnit.Test" "Survey.Business.XUnit.Test2")
 	
 	for unitTestProjectDirectory in "${unitTestProjectDirectories[@]}"
 	do
