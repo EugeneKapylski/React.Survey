@@ -50,6 +50,8 @@ NC='\033[0m' # No Color
 			exit $rc
 		fi
 		
+		cd ..
+		
 	   # or do whatever with individual element of the array
 	done
 
